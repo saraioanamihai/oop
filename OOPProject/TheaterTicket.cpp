@@ -23,4 +23,14 @@ public:
 		this->seat = seat;
 	}
 
+	TheaterTicket(const TheaterTicket& t) {
+		this->playName = t.playName;
+		this->row = t.row;
+		this->seat = seat;
+	}
+
+	~TheaterTicket() {
+
+	}
+
 };
