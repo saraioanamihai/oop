@@ -22,6 +22,10 @@ public:
 		this->seat = seat;
 	}
 
-
+	FootballTicket(const FootballTicket& f) {
+		this->game = f.game;
+		this->row = f.row;
+		this->seat = f.seat;
+	}
 
 };
