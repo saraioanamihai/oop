@@ -33,4 +33,16 @@ public:
 
 	}
 
+	string getPlayName() {
+		return playName;
+	}
+
+	char getRow() {
+		return row;
+	}
+
+	int getSeat() {
+		return seat;
+	}
+
 };
