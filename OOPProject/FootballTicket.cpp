@@ -4,6 +4,7 @@ using namespace std;
 class FootballTicket {
 private:
 
+	const int id;
 	string game; // ex. "Germany vs. Poland
 	enum stands { Stand1, Stand2 } stand;
 	char row;
@@ -11,21 +12,21 @@ private:
 
 public:
 
-	FootballTicket() {
+	FootballTicket() : id(rand()) {
 		game = "";
 		stand = Stand1;
 		row = NULL;
 		seat = 0;
 	}
 
-	FootballTicket(string game, stands stand, char row, int seat) {
+	FootballTicket(string game, stands stand, char row, int seat) : id(rand()) {
 		this->game = game;
 		this->stand = stand;
 		this->row = row;
 		this->seat = seat;
 	}
 
-	FootballTicket(const FootballTicket& f) {
+	FootballTicket(const FootballTicket& f) : id(f.id) {
 		this->game = f.game;
 		this->stand = f.stand;
 		this->row = f.row;

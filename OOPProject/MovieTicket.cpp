@@ -3,6 +3,8 @@ using namespace std;
 
 class MovieTicket {
 private:
+
+	const int id;
 	string movieName;
 	enum categories {VIP, Normal} category;
 	char row;
@@ -10,21 +12,21 @@ private:
 
 public:
 
-	MovieTicket() {
+	MovieTicket() : id(rand()) {
 		movieName = "";
 		category = Normal;
 		row = NULL;
 		seat = 0;
 	}
 
-	MovieTicket(string movie, categories category, char row, int seat) {
+	MovieTicket(string movie, categories category, char row, int seat) : id(rand()) {
 		this->movieName = movie;
 		this->category = category;
 		this->row = row;
 		this->seat = seat;
 	}
 
-	MovieTicket(const MovieTicket& m) {
+	MovieTicket(const MovieTicket& m) : id(m.id) {
 		this->movieName = m.movieName;
 		this->category = m.category;
 		this->row = m.row;

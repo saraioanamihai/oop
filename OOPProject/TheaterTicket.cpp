@@ -5,6 +5,7 @@ class TheaterTicket {
 
 private: 
 
+	const int id;
 	string playName;
 	enum categories { Category1, Category2, Box } category;
 	char row;
@@ -12,21 +13,21 @@ private:
 
 public:
 
-	TheaterTicket() {
+	TheaterTicket() : id(rand()) {
 		playName = "";
 		category = Category1;
 		row = NULL;
 		seat = 0;
 	}
 
-	TheaterTicket(string play, categories category, char row, int seat) {
+	TheaterTicket(string play, categories category, char row, int seat) : id(rand()) {
 		this->playName = play;
 		this->category = category;
 		this->row = row;
 		this->seat = seat;
 	}
 
-	TheaterTicket(const TheaterTicket& t) {
+	TheaterTicket(const TheaterTicket& t) : id(t.id) {
 		this->playName = t.playName;
 		this->category = t.category;
 		this->row = t.row;
