@@ -45,4 +45,16 @@ public:
 		return seat;
 	}
 
+	void setPlay(string play) {
+		this->playName = play;
+	}
+
+	void setRow(char row) {
+		this->row = row;
+	}
+
+	void setSeat(int seat) {
+		this->seat = seat;
+	}
+
 };

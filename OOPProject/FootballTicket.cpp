@@ -44,4 +44,15 @@ public:
 		return seat;
 	}
 
+	void setGame(string game) {
+		this->game = game;
+	}
+
+	void setRow(char row) {
+		this->row = row;
+	}
+
+	void setSeat(int seat) {
+		this->seat = seat;
+	}
 };

@@ -42,5 +42,15 @@ public:
 		return seat;
 	}
 
+	void setMovieName(string movie) {
+		this->movieName = movie;
+	}
 
+	void setRow(char row) {
+		this->row = row;
+	}
+
+	void setSeat(int seat) {
+		this->seat = seat;
+	}
 };
