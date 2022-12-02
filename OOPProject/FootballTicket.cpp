@@ -5,6 +5,7 @@ class FootballTicket {
 private:
 
 	string game; // ex. "Germany vs. Poland
+	enum stands { Stand1, Stand2 } stand;
 	char row;
 	int seat;
 
@@ -12,18 +13,21 @@ public:
 
 	FootballTicket() {
 		game = "";
+		stand = Stand1;
 		row = NULL;
 		seat = 0;
 	}
 
-	FootballTicket(string game, char row, int seat) {
+	FootballTicket(string game, stands stand, char row, int seat) {
 		this->game = game;
+		this->stand = stand;
 		this->row = row;
 		this->seat = seat;
 	}
 
 	FootballTicket(const FootballTicket& f) {
 		this->game = f.game;
+		this->stand = f.stand;
 		this->row = f.row;
 		this->seat = f.seat;
 	}
@@ -36,6 +40,10 @@ public:
 		return game;
 	}
 
+	stands getStand() {
+		return stand;
+	}
+
 	char getRow() {
 		return row;
 	}
@@ -46,6 +54,10 @@ public:
 
 	void setGame(string game) {
 		this->game = game;
+	}
+
+	void setStand(stands stand) {
+		this->stand = stand;
 	}
 
 	void setRow(char row) {
