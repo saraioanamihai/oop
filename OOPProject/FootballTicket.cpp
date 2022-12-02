@@ -28,4 +28,20 @@ public:
 		this->seat = f.seat;
 	}
 
+	~FootballTicket() {
+
+	}
+
+	string getGame() {
+		return game;
+	}
+
+	char getRow() {
+		return row;
+	}
+
+	int getSeat() {
+		return seat;
+	}
+
 };
