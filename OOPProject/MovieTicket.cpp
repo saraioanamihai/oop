@@ -21,4 +21,26 @@ public:
 		this->seat = seat;
 	}
 
+	MovieTicket(const MovieTicket& m) {
+		this->movieName = m.movieName;
+		this->row = m.row;
+		this->seat = m.seat;
+	}
+
+	~MovieTicket() {
+	}
+
+	string getMovieName() {
+		return movieName;
+	}
+
+	char getRow() {
+		return row;
+	}
+
+	int getSeat() {
+		return seat;
+	}
+
+
 };
