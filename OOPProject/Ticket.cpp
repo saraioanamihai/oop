@@ -82,6 +82,16 @@ public:
 		else return false;
 	}
 
+	// overloading the = operator to copy an existing object into another existing, as opposed to the copy constructor
+	Ticket operator = (const Ticket& t) {
+		if (this != &t) {	
+			this->event = t.event;
+			this->row = t.row;
+			this->seat = t.seat;
+		}
+		return *this;
+	}
+
 	friend ostream& operator<<(ostream& out, Ticket t);
 	friend istream& operator>>(istream& in, Ticket& t);
 };
