@@ -133,5 +133,27 @@ public:
 			return row[index];
 		}
 	}
-
+	friend ostream& operator<<(ostream& out, Match m);
+	friend istream& operator>>(istream& in, Match& m);
 };
+
+// we overload the << operator to print details about a movie
+ostream& operator<<(ostream& out, Match m) {
+	out << "The teams that are playing: " << m.teams << endl;
+	out << "Number of rows: " << m.noRows << endl;
+	out << "Number of seats: " << m.noSeats << endl;
+	return out;
+}
+
+// we overload the >> operator to read details about a movie
+istream& operator>>(istream& in, Match& m) {
+	cout << "The teams that are playing: ";
+	char buffer[100];
+	in >> buffer;
+	m.setTeams(buffer);
+	cout << "Number of rows: ";
+	in >> m.noRows;
+	cout << "Number of seats: ";
+	in >> m.noSeats;
+	return in;
+}
