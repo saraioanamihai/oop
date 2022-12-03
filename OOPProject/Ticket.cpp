@@ -9,6 +9,7 @@ private:
 	static string category;
 	char row;
 	int seat;
+	// price
 
 public:
 
