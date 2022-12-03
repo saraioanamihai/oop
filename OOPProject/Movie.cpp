@@ -120,4 +120,12 @@ public:
 	void setSeat(int* seat) {
 		this->seat = seat;
 	}
+
+	Movie operator+(Movie m) {
+		Movie copy = *this;
+		copy.movieTitle = this->movieTitle + m.movieTitle;
+		return copy;
+	}
+
+
 };

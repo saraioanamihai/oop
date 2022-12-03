@@ -6,6 +6,7 @@ private:
 
 	const int id;
 	string event;
+	static string category;
 	char row;
 	int seat;
 
