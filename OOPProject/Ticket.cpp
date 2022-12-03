@@ -64,6 +64,14 @@ public:
 		this->seat = seat;
 	}
 
+	// overloading the == operator
+	bool operator==(Ticket t) {
+		if (this->event == t.event && this->row == t.row && this->seat == t.seat) {
+			return true;
+		}
+		else return false;
+	}
+
 	friend ostream& operator<<(ostream& out, Ticket t);
 	friend istream& operator>>(istream& in, Ticket& t);
 };
