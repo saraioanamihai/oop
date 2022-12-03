@@ -6,10 +6,11 @@ private:
 
 	const int id;
 	string event;
-	// static string category;
+	//category;
 	char row;
 	int seat;
 	// price
+	static string ticketCompany;
 
 public:
 
@@ -55,6 +56,10 @@ public:
 		return seat;
 	}
 
+	static string getTicketCompany() {
+		return ticketCompany;
+	}
+
 	// setters
 	void setEvent(string event) {
 		if (event.size() > 0) {
@@ -72,6 +77,10 @@ public:
 		if (seat != NULL) {
 			this->seat = seat;
 		}
+	}
+
+	static void setTicketCompany() {
+		ticketCompany = "Sara's Ticket Company";
 	}
 
 	// overloading the == operator
