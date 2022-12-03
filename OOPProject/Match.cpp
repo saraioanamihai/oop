@@ -135,6 +135,14 @@ public:
 	}
 	friend ostream& operator<<(ostream& out, Match m);
 	friend istream& operator>>(istream& in, Match& m);
+
+	// overloading the > operator to compare the number of available seats for 2 matches
+	bool operator>(Match m) {
+		if ((noSeats * noRows) > (m.noSeats * m.noRows)) {
+			return true;
+		}
+		else return false;
+	}
 };
 
 // we overload the << operator to print details about a movie
