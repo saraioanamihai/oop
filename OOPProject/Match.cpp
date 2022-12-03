@@ -126,4 +126,12 @@ public:
 	void setSeat(int* seat) {
 		this->seat = seat;
 	}
+
+	// overloading the index [] operator
+	char& operator[](int index) {
+		if (index >= 0 && row != nullptr && index < noRows) {
+			return row[index];
+		}
+	}
+
 };
