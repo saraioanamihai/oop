@@ -6,7 +6,7 @@ private:
 
 	const int id;
 	string event;
-	static string category;
+	// static string category;
 	char row;
 	int seat;
 	// price
@@ -63,4 +63,28 @@ public:
 	void setSeat(int seat) {
 		this->seat = seat;
 	}
+
+	friend ostream& operator<<(ostream& out, Ticket t);
+	friend istream& operator>>(istream& in, Ticket& t);
 };
+
+// we overload the << operator to print details about a movie
+ostream& operator<<(ostream& out, Ticket t) {
+	out << "Event: " << t.event << endl;
+	out << "Row: " << t.row << endl;
+	out << "Seat: " << t.seat << endl;
+	return out;
+}
+
+// we overload the >> operator to read details about a movie
+istream& operator>>(istream& in, Ticket& t) {
+	cout << "Event: ";
+	char buffer[100];
+	in >> buffer;
+	t.setEvent(buffer);
+	cout << "Row: ";
+	in >> t.row;
+	cout << "Seat: ";
+	in >> t.seat;
+	return in;
+}
