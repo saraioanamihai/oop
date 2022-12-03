@@ -135,5 +135,11 @@ public:
 		return copy;
 	}
 
-
+	// oveloading the - operator
+	Movie operator-(Movie m) {
+		Movie copy = *this;
+		if (this->noSeats > m.noSeats) {
+			copy.noSeats = copy.noSeats - m.noSeats;
+		}
+	}
 };
