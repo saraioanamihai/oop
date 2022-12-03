@@ -128,6 +128,7 @@ public:
 		this->seat = seat;
 	}
 
+
 	// overloading the + operator
 	Movie operator+(Movie m) {
 		Movie copy = *this;
@@ -142,4 +143,28 @@ public:
 			copy.noSeats = copy.noSeats - m.noSeats;
 		}
 	}
+
+	friend ostream& operator<<(ostream& out, Movie m);
+	friend istream& operator>>(istream& in, Movie& m);
 };
+
+// we overload the << operator to print details about a movie
+ostream& operator<<(ostream& out, Movie m) {
+	out << "Title of the movie: " << m.movieTitle << endl;
+	out << "Number of rows: " << m.noRows << endl;
+	out << "Number of seats: " << m.noSeats << endl;
+	return out;
+}
+
+// we overload the >> operator to read details about a movie
+istream& operator>>(istream& in, Movie& m) {
+	cout << "Title of the movie: ";
+	char buffer[100];
+	in >> buffer;
+	m.setMovieTitle(buffer);
+	cout << "Number of rows: ";
+	in >> m.noRows;
+	cout << "Number of seats: ";
+	in >> m.noSeats;
+	return in;
+}
