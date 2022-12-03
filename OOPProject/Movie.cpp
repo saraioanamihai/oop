@@ -109,23 +109,33 @@ public:
 
 	// setters
 	void setMovieTitle(string movieTitle) {
-		this->movieTitle = movieTitle;
+		if (movieTitle.size() > 0) {
+			this->movieTitle = movieTitle;
+		}
 	}
 
 	void setNoRows(int noRows) {
-		this->noRows = noRows;
+		if (noRows > 0) {
+			this->noRows = noRows;
+		}
 	}
 
 	void setRow(char* row) {
-		this->row = row;
+		if (row != nullptr) {
+			this->row = row;
+		}
 	}
 
 	void setNoSeats(int noSeats) {
-		this->noSeats = noSeats;
+		if (noSeats > 0) {
+			this->noSeats = noSeats;
+		}
 	}
 
 	void setSeat(int* seat) {
-		this->seat = seat;
+		if (seat != nullptr) {
+			this->seat = seat;
+		}
 	}
 
 

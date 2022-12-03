@@ -39,6 +39,10 @@ public:
 	}
 
 	// getters
+	int getId() {
+		return id;
+	}
+
 	string getEvent() {
 		return event;
 	}
@@ -52,16 +56,22 @@ public:
 	}
 
 	// setters
-	void setEvent(string movie) {
-		this->event = event;
+	void setEvent(string event) {
+		if (event.size() > 0) {
+			this->event = event;
+		}
 	}
 
 	void setRow(char row) {
-		this->row = row;
+		if (row != NULL) {
+			this->row = row;
+		}
 	}
 
 	void setSeat(int seat) {
-		this->seat = seat;
+		if (seat != NULL) {
+			this->seat = seat;
+		}
 	}
 
 	// overloading the == operator
