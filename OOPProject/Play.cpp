@@ -137,6 +137,19 @@ public:
 		}
 	}
 
+	// overloading the ! operator
+	bool operator!() {
+		return noSeats <= 0 && noRows <= 0;
+	}
+
+	// overloading the pre-incrementation operator ++
+	Play& operator++() {
+		if (seat != nullptr && noSeats > 0) {
+			seat[0]++;
+		}
+		return *this;
+	}
+
 	friend ostream& operator<<(ostream& out, Play p);
 	friend istream& operator>>(istream& in, Play& p);
 };
@@ -157,7 +170,7 @@ istream& operator>>(istream& in, Play& p) {
 	p.setPlayTitle(buffer);
 	cout << "Number of rows: ";
 	in >> p.noRows;
-	cout << "Number of seats: ";
+	cout << "Number of seats: "; 
 	in >> p.noSeats;
 	return in;
 }
