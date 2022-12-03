@@ -9,7 +9,7 @@ private:
 	//category;
 	char row;
 	int seat;
-	// price
+	float price;
 	static string ticketCompany;
 
 public:
@@ -19,13 +19,15 @@ public:
 		event = "";
 		row = NULL;
 		seat = 0;
+		price = 0.00;
 	}
 
 	// constructor with parameters
-	Ticket(string event, char row, int seat) : id(rand()) {
+	Ticket(string event, char row, int seat, float price) : id(rand()) {
 		this->event = event;
 		this->row = row;
 		this->seat = seat;
+		this->price = price;
 	}
 
 	// copy constructor
@@ -33,6 +35,7 @@ public:
 		this->event = t.event;
 		this->row = t.row;
 		this->seat = t.seat;
+		this->price = t.price;
 	}
 
 	// destructor
@@ -60,6 +63,10 @@ public:
 		return ticketCompany;
 	}
 
+	float getPrice() {
+		return price;
+	}
+
 	// setters
 	void setEvent(string event) {
 		if (event.size() > 0) {
@@ -85,9 +92,15 @@ public:
 		}
 	}
 
+	void setPrice(float price) {
+		if (price != NULL) {
+			this->price = price;
+		}
+	}
+
 	// overloading the == operator
 	bool operator==(Ticket t) {
-		if (this->event == t.event && this->row == t.row && this->seat == t.seat) {
+		if (this->event == t.event && this->row == t.row && this->seat == t.seat && this->price == price) {
 			return true;
 		}
 		else return false;
@@ -99,6 +112,7 @@ public:
 			this->event = t.event;
 			this->row = t.row;
 			this->seat = t.seat;
+			this->price = t.price;
 		}
 		return *this;
 	}
@@ -109,15 +123,17 @@ public:
 
 string Ticket::ticketCompany = "Sara's Ticket Company";
 
-// we overload the << operator to print details about a movie
+// we overload the << operator to print details about a ticket
 ostream& operator<<(ostream& out, Ticket t) {
+	out << "Ticket Company: " << t.ticketCompany << endl;
 	out << "Event: " << t.event << endl;
 	out << "Row: " << t.row << endl;
 	out << "Seat: " << t.seat << endl;
+	out << "Price: " << t.price << endl;
 	return out;
 }
 
-// we overload the >> operator to read details about a movie
+// we overload the >> operator to read details about a ticket
 istream& operator>>(istream& in, Ticket& t) {
 	cout << "Event: ";
 	char buffer[100];
@@ -127,5 +143,7 @@ istream& operator>>(istream& in, Ticket& t) {
 	in >> t.row;
 	cout << "Seat: ";
 	in >> t.seat;
+	cout << "Price: ";
+	in >> t.price;
 	return in;
 }
