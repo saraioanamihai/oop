@@ -12,6 +12,7 @@ private:
 
 public:
 
+	// default constructor
 	Play() {
 		playTitle = "";
 		noRows = 0;
@@ -20,6 +21,7 @@ public:
 		seat = nullptr;
 	}
 
+	// constructor with parameters
 	Play(string playTitle, int noRows, char* row, int noSeats, int* seat) {
 		this->playTitle = playTitle;
 		if (noRows > 0 && row != nullptr) {
@@ -46,6 +48,7 @@ public:
 		}
 	}
 
+	// destructor
 	~Play() {
 		if (row != nullptr) {
 			delete[] row;
@@ -55,6 +58,7 @@ public:
 		}
 	}
 
+	// copy constructor
 	Play(const Play& p) {
 		this->playTitle = p.playTitle;
 		if (p.noRows > 0 && p.row != nullptr) {
@@ -81,6 +85,7 @@ public:
 		}
 	}
 
+	// getters
 	string getPlayTitle() {
 		return playTitle;
 	}
@@ -101,6 +106,7 @@ public:
 		return seat;
 	}
 
+	// setters
 	void setPlayTitle(string playTitle) {
 		this->playTitle = playTitle;
 	}

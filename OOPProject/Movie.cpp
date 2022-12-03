@@ -6,12 +6,13 @@ private:
 
 	string movieTitle;
 	int noRows;
-	char* row;
-	int noSeats;
-	int* seat;
+	char* row; // dynamically allocated vector of charachters
+	int noSeats; 
+	int* seat; // dynamically allocated numeric vector
 
 public:
 
+	// default constructor
 	Movie() {
 		movieTitle = "";
 		noRows = 0;
@@ -20,6 +21,7 @@ public:
 		seat = nullptr;
 	}
 
+	// constructor with parameters
 	Movie(string movieTitle, int noRows, char* row, int noSeats, int* seat) {
 		this->movieTitle = movieTitle;
 		if (noRows > 0 && row != nullptr) {
@@ -46,6 +48,7 @@ public:
 		}
 	}
 
+	// destructor
 	~Movie() {
 		if (row != nullptr) {
 			delete[] row;
@@ -55,6 +58,8 @@ public:
 		}
 	}
 
+	
+	// copy constructor
 	Movie(const Movie& m) {
 		this->movieTitle = m.movieTitle;
 		if (m.noRows > 0 && m.row != nullptr) {
@@ -81,6 +86,7 @@ public:
 		}
 	}
 
+	// getters
 	string getMovieTitle() {
 		return movieTitle;
 	}
@@ -101,6 +107,7 @@ public:
 		return seat;
 	}
 
+	// setters
 	void setMovieTitle(string movieTitle) {
 		this->movieTitle = movieTitle;
 	}
@@ -121,6 +128,7 @@ public:
 		this->seat = seat;
 	}
 
+	// overloading the + operator
 	Movie operator+(Movie m) {
 		Movie copy = *this;
 		copy.movieTitle = this->movieTitle + m.movieTitle;

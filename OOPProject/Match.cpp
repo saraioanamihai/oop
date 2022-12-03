@@ -12,6 +12,7 @@ private:
 
 public:
 
+	// default constructor
 	Match() {
 		teams = "";
 		noRows = 0;
@@ -20,6 +21,7 @@ public:
 		seat = nullptr;
 	}
 
+	// constructor with parameters
 	Match(string teams, int noRows, char* row, int noSeats, int* seat) {
 		this->teams = teams;
 		if (noRows > 0 && row != nullptr) {
@@ -45,7 +47,8 @@ public:
 			this->noSeats = 0;
 		}
 	}
-
+	
+	// destructor
 	~Match() {
 		if (row != nullptr) {
 			delete[] row;
@@ -55,6 +58,7 @@ public:
 		}
 	}
 
+	// copy constructor
 	Match(const Match& m) {
 		this->teams = m.teams;
 		if (m.noRows > 0 && m.row != nullptr) {
@@ -81,6 +85,7 @@ public:
 		}
 	}
 
+	// getters
 	string getTeams() {
 		return teams;
 	}
@@ -101,6 +106,7 @@ public:
 		return seat;
 	}
 
+	// setters
 	void setTeams(string teams) {
 		this->teams = teams;
 	}
