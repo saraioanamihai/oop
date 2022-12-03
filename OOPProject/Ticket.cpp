@@ -79,8 +79,10 @@ public:
 		}
 	}
 
-	static void setTicketCompany() {
-		ticketCompany = "Sara's Ticket Company";
+	static void setTicketCompany(string ticketCompany) {
+		if (ticketCompany.size() > 0) {
+			Ticket::ticketCompany = ticketCompany;
+		}
 	}
 
 	// overloading the == operator
@@ -104,6 +106,8 @@ public:
 	friend ostream& operator<<(ostream& out, Ticket t);
 	friend istream& operator>>(istream& in, Ticket& t);
 };
+
+string Ticket::ticketCompany = "Sara's Ticket Company";
 
 // we overload the << operator to print details about a movie
 ostream& operator<<(ostream& out, Ticket t) {
