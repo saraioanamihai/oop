@@ -355,6 +355,7 @@ MigrationBackup/
 *.vcxproj.filters
 
 # adding FootballTicket, MovieTicket and TheaterTicket bcs we merged them into Ticket and don't need them anymore
-OOPProject/MovieTicket.cpp
 OOPProject/TheaterTicket.cpp
 OOPProject/FootballTicket.cpp
+
+# no longer ignoring MovieTicket.cpp
