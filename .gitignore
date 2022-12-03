@@ -353,3 +353,8 @@ MigrationBackup/
 *.sln
 *.vcxproj
 *.vcxproj.filters
+
+# adding FootballTicket, MovieTicket and TheaterTicket bcs we merged them into Ticket and don't need them anymore
+MovieTicket.cpp
+TheaterTicket.cpp
+FootballTicket.cpp
