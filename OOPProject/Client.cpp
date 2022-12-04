@@ -47,7 +47,18 @@ public:
 		}
 	}
 
+	// overloading operator * 
+	Client operator* (const Client& c) {
+		this->name = this->name + " " + c.name;
+	}
+
+	// overloading the operator /
+	Client operator/ (const Client& c) {
+		this->name = c.name;
+	}
+
 	friend ostream& operator<<(ostream& out, Client c);
+	friend istream& operator>>(istream& in, Client& c);
 };
 
 // we overload the << operator to print details about a client
