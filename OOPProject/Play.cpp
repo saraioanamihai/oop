@@ -150,6 +150,17 @@ public:
 		return *this;
 	}
 
+	// overloading the post-incrementation operator ++
+	Play operator++(int i)
+	{
+		Play copy = *this;
+		if (seat != nullptr && noSeats > 0)
+		{
+			seat[0]++;
+		}
+		return copy;
+	}
+
 	friend ostream& operator<<(ostream& out, Play p);
 	friend istream& operator>>(istream& in, Play& p);
 };
