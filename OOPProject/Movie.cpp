@@ -8,7 +8,7 @@ private:
 	int noRows;
 	char* row; // dynamically allocated vector of charachters
 	int noSeats; 
-	int* seat; // dynamically allocated numeric vector
+	int* seat = {0}; // dynamically allocated numeric vector
 
 public:
 
@@ -153,6 +153,16 @@ public:
 			copy.noSeats = copy.noSeats - m.noSeats;
 		}
 	}
+
+/*	bool checkAvailability(char row, int seat) {
+		int ok = 0;
+		for (int i = 0; i < this->noRows; i++) {
+			if (this->row[i] == row) ok++;
+		}
+		for()
+	}
+
+*/
 
 	friend ostream& operator<<(ostream& out, Movie m);
 	friend istream& operator>>(istream& in, Movie& m);
