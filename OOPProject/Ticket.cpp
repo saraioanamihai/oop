@@ -6,6 +6,7 @@ private:
 
 	const int id;
 	string event;
+	enum categories {Stand1, Stand2, Normal, VIP, Category1, Category2, BOX} category;
 	char row;
 	int seat;
 	float price;
@@ -22,8 +23,9 @@ public:
 	}
 
 	// constructor with parameters
-	Ticket(string event, char row, int seat, float price) : id(rand()) {
+	Ticket(string event, categories category, char row, int seat, float price) : id(rand()) {
 		this->event = event;
+		this->category = category;
 		this->row = row;
 		this->seat = seat;
 		this->price = price;
@@ -32,6 +34,7 @@ public:
 	// copy constructor
 	Ticket(const Ticket& t) : id(t.id) {
 		this->event = t.event;
+		this->category = t.category;
 		this->row = t.row;
 		this->seat = t.seat;
 		this->price = t.price;
@@ -48,6 +51,10 @@ public:
 
 	string getEvent() {
 		return event;
+	}
+
+	categories getCategory() {
+		return category;
 	}
 
 	char getRow() {
@@ -71,6 +78,9 @@ public:
 		if (event.size() > 0) {
 			this->event = event;
 		}
+	}
+	void setCategory(categories category) {
+		this->category = category;
 	}
 
 	void setRow(char row) {
