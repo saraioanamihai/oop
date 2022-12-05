@@ -6,7 +6,6 @@ private:
 
 	const int id;
 	string event;
-	//category;
 	char row;
 	int seat;
 	float price;
@@ -115,6 +114,11 @@ public:
 			this->price = t.price;
 		}
 		return *this;
+	}
+
+	static bool checkTicketCompany() {
+		if (ticketCompany == "Sara's Ticket Company") return true;
+		else return false;
 	}
 
 	friend ostream& operator<<(ostream& out, Ticket t);
