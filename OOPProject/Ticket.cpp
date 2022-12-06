@@ -133,4 +133,5 @@ public:
 
 	friend ostream& operator<<(ostream& out, Ticket t);
 	friend istream& operator>>(istream& in, Ticket& t);
+	friend int main();
 };

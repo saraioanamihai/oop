@@ -48,8 +48,25 @@ int main() {
 		cout << "Match 1 has more available seats than Match 2" << endl;
 	}
 	else {
-		"Match 2 has more available seats than Match 1";
+		cout << "Match 2 has more available seats than Match 1" << endl;
 	}
+	cout << endl;
+
+	Ticket t1("Movie: Halloween", Ticket::categories::VIP, 'C', 7, (float) 19.99);
+	cout << t1 << endl;
+	Ticket t2 = t1;
+	cout << t2 << endl;
+	if (t1 == t2) {
+		cout << "Ticket 1 and Ticket 2 are identical" << endl;
+	}
+	else {
+		cout << "Ticket 1 and Ticket 2 are different" << endl;
+	}
+	cout << endl;
+	Ticket t3;
+	cin >> t3;
+	cout << endl;
+	cout << t3 << endl;
 }
 
 string Ticket::ticketCompany = "Sara's Ticket Company";
