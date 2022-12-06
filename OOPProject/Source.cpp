@@ -7,8 +7,8 @@ using namespace std;
 
 int main() {
 	
-	char row[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'I', 'J', 'K'};
-	int seat[20] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+	char row[] = {'A', 'B', 'C', 'D', 'E', 'F', 'I', 'J', 'K', 'L'};
+	int seat[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 	
 	Movie m1("Halloween", 10, row, 20, seat);
 	cout << m1 << endl;
