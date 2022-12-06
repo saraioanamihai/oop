@@ -34,6 +34,22 @@ int main() {
 	++p1;
 	cout << p1 << endl;
 
+	Match ma1("France vs Brazil", 10, row, 20, seat);
+	cout << ma1.getTeams() << " ";
+	cout << ma1.getNoRows() << " ";
+	cout << ma1.getRow() << " ";
+	cout << ma1.getNoSeats() << " ";
+	cout << ma1.getSeat() << endl;
+	cout << ma1[3] << endl;
+	char row2[] = {'A','B'};
+	int seat2[] = {1, 2};
+	Match ma2("Steaua vs Dinamo", 2, row2, 2, seat2);
+	if (ma1 > ma2) {
+		cout << "Match 1 has more available seats than Match 2" << endl;
+	}
+	else {
+		"Match 2 has more available seats than Match 1";
+	}
 }
 
 string Ticket::ticketCompany = "Sara's Ticket Company";
