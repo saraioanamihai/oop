@@ -134,30 +134,3 @@ public:
 	friend ostream& operator<<(ostream& out, Ticket t);
 	friend istream& operator>>(istream& in, Ticket& t);
 };
-
-string Ticket::ticketCompany = "Sara's Ticket Company";
-
-// we overload the << operator to print details about a ticket
-ostream& operator<<(ostream& out, Ticket t) {
-	out << "Ticket Company: " << t.ticketCompany << endl;
-	out << "Event: " << t.event << endl;
-	out << "Row: " << t.row << endl;
-	out << "Seat: " << t.seat << endl;
-	out << "Price: " << t.price << endl;
-	return out;
-}
-
-// we overload the >> operator to read details about a ticket
-istream& operator>>(istream& in, Ticket& t) {
-	cout << "Event: ";
-	char buffer[100];
-	in >> buffer;
-	t.setEvent(buffer);
-	cout << "Row: ";
-	in >> t.row;
-	cout << "Seat: ";
-	in >> t.seat;
-	cout << "Price: ";
-	in >> t.price;
-	return in;
-}

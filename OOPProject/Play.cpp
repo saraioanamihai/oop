@@ -164,24 +164,3 @@ public:
 	friend ostream& operator<<(ostream& out, Play p);
 	friend istream& operator>>(istream& in, Play& p);
 };
-
-// we overload the << operator to print details about a play
-ostream& operator<<(ostream& out, Play p) {
-	out << "Title of the play: " << p.playTitle << endl;
-	out << "Number of rows: " << p.noRows << endl;
-	out << "Number of seats: " << p.noSeats << endl;
-	return out;
-}
-
-// we overload the >> operator to read details about a movie
-istream& operator>>(istream& in, Play& p) {
-	cout << "Title of the play: ";
-	char buffer[100];
-	in >> buffer;
-	p.setPlayTitle(buffer);
-	cout << "Number of rows: ";
-	in >> p.noRows;
-	cout << "Number of seats: "; 
-	in >> p.noSeats;
-	return in;
-}
