@@ -8,18 +8,31 @@ using namespace std;
 int main() {
 	
 	char row[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'I', 'J', 'K'};
-	int seat[20];
-	for (int i = 1; i <= 20; i++) {
-		seat[i] = i;
-	}
+	int seat[20] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+	
 	Movie m1("Halloween", 10, row, 20, seat);
-	cout << m1;
+	cout << m1 << endl;
 	Movie m2("Hustlers", 10, row, 20, seat);
-	cout << m2;
+	cout << m2 << endl;
 	m1 = m2;
-	cout << m1;
+	cout << m1 << endl;
+	Movie m3("Hush", 10, row, 20, seat);
+	Movie m4 = m1 + m3;
+	cout << m4 << endl;
+	Movie m5 = m1 - m3;
+	cout << m5 << endl;
 
-
+	Play p1;
+	p1.setPlayTitle("Hamlet");
+	p1.setNoRows(10);
+	p1.setRow(row);
+	p1.setNoSeats(20);
+	p1.setSeat(seat);
+	cout << p1 << endl;
+	p1++;
+	cout << p1 << endl;
+	++p1;
+	cout << p1 << endl;
 
 }
 

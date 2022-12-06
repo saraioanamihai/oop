@@ -149,9 +149,10 @@ public:
 	// oveloading the - operator
 	Movie operator-(Movie m) {
 		Movie copy = *this;
-		if (this->noSeats > m.noSeats) {
+		if (this->noSeats >= m.noSeats) {
 			copy.noSeats = copy.noSeats - m.noSeats;
 		}
+		return copy;
 	}
 
 /*	bool checkAvailability(char row, int seat) {
