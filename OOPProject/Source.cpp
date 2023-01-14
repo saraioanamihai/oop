@@ -158,5 +158,3 @@ istream& operator>>(istream& in, Ticket& t) {
 	in >> t.price;
 	return in;
 }
-
-// of doamne ia-ma
