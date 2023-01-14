@@ -1,7 +1,8 @@
 #include <iostream>
+#include "Taxable.cpp"
 using namespace std;
 
-class Ticket {
+class Ticket : public Taxable {
 private:
 
 	const int id;
@@ -129,6 +130,11 @@ public:
 	static bool checkTicketCompany() {
 		if (ticketCompany == "Sara's Ticket Company") return true;
 		else return false;
+	}
+
+	// overriding pure virtual method
+	float computePriceAfterTax() {
+		return price * 0.9;
 	}
 
 	friend ostream& operator<<(ostream& out, Ticket t);
